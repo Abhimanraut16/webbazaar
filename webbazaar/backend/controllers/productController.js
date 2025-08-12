@@ -4,12 +4,9 @@ import productModel from "../models/productModel.js";
 // add product 
 const addProduct = async (req, res) => {
   try {
-
-
     if (!req.body) {
       return res.status(400).json({ success: false, message: "No form data received" });
     }
-
     const { name, description, price, category, subCategory, sizes, bestseller } = req.body
 
     const image1 = req.files.image1 && req.files.image1[0];
@@ -49,8 +46,6 @@ const addProduct = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
-
 
 // list product 
 const listProduct = async(req,res) =>{
